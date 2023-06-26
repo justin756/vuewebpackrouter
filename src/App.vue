@@ -1,13 +1,20 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <router-view/>
+    <!-- <router-view/> -->
+    <div class="aa">234</div>
+    <HelloWorld/>
   </div>
 </template>
 
 <script>
+import HelloWorld from './components/HelloWorld'
+
 export default {
-  name: 'App'
+  name: 'Ap',
+  components: {
+    HelloWorld
+  }
 }
 </script>
 
@@ -19,5 +26,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.aa{
+  color: aqua;
 }
 </style>
