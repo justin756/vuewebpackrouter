@@ -8,7 +8,7 @@
 
 <script>
 import HelloWorld from './components/HelloWorld'
-import aa from './components/pages/page.vue'
+import aa from './components/pages/page'
 export default {
   name: 'App',
   components: {
