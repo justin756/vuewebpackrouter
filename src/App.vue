@@ -1,35 +1,31 @@
 <template>
   <div id="app">
-    <!-- <img src="./assets/logo.png"> -->
-    <!-- <router-view/> -->
-    <!-- <div class="aa">234</div> -->
-    <!-- <HelloWorld /> -->
-    <div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
-   
-
-
-
+    <img src="./assets/logo.png">
+    <router-view/>
+ 
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld";
-
+import HelloWorld from './components/HelloWorld'
+import aa from './components/pages/page.vue'
 export default {
-  name: "App",
+  name: 'App',
   components: {
-    HelloWorld
+    HelloWorld,
+    aa
   }
-};
+}
 </script>
 
-<style lang="scss">
-@import "~bootstrap/scss/bootstrap";
+<style>
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+
 </style>

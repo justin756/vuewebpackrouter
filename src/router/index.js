@@ -1,17 +1,25 @@
-// import Vue from 'vue'
-// import Router from 'vue-router'
-// import HelloWorld from '@/components/HelloWorld'
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+//官方元件
 
-// console.dir(HelloWorld)
+import Home from '@/components/HelloWorld'
+//自訂的原件
+import Page from '@/components/pages/page'
 
-// Vue.use(Router)
 
-// export default new Router({
-//   routes: [
-//     {
-//       path: '/',
-//       name: 'HelloWorld',
-//       component: HelloWorld
-//     }
-//   ]
-// })
+Vue.use(VueRouter)
+
+export default new VueRouter({
+    routes:[
+        {
+            name:"首頁",
+            path:'/',
+            component:Home
+        },
+        {
+            name:"分頁",
+            path:'/aa',
+            component:Page
+        },
+    ]
+})
