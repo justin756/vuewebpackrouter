@@ -9,7 +9,7 @@ import Page from '@/components/pages/Page'
 import Page2 from '@/components/pages/page2'
 import Page3 from '@/components/pages/page3'
 import Page4 from '@/components/pages/page4'
-
+import menu from '@/components/pages/menu'
 
 
 Vue.use(VueRouter)
@@ -25,10 +25,14 @@ export default new VueRouter({
             name:"page",
             path:'/page',
             component:Page,
+            components:{
+              default:Page,
+              menu:menu,
+            },
             children:[
                 {
                     name:"page2",
-                    path:'',
+                    path:'page2/:id',
                     component:Page2
                 },
                 {

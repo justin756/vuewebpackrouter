@@ -10,7 +10,8 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <router-link :to="{name:'首頁'}"   class="nav-link active" aria-current="page"> Home</router-link>
-        <router-link to="/page/"   class="nav-link active" aria-current="page"> page2</router-link>
+        <router-link to="/page/"   class="nav-link active" aria-current="page"> page</router-link>
+        <router-link to="/page/page2"   class="nav-link active" aria-current="page"> page2</router-link>
         <router-link to="/page/page3"   class="nav-link active" aria-current="page"> page3</router-link>
         <router-link to="/page/page4"   class="nav-link active" aria-current="page"> page4</router-link>
 
@@ -21,25 +22,39 @@
 </nav>
 
 
-
-    <img src="./assets/logo.png">
-    <router-view/>
+<router-view name="menu"></router-view>
+<div class="container">
+  <img src="./assets/logo.png">
+  <router-view></router-view>
+</div>
+  
 
 
   </div>
 </template>
 
-<!-- <script>
-import HelloWorld from './components/HelloWorld'
-import aa from './components/pages/page'
+<script>
+// import HelloWorld from './components/HelloWorld'
+// import aa from './components/pages/page'
 export default {
   name: 'App',
   components: {
-    HelloWorld,
-    aa
+ 
+  },
+  created(){
+    const api="http://localhost:3000/api/justin/products"
+this.$http.get(api).then((res)=>{
+  
+  console.log(res)
+
+})
+    
   }
 }
-</script> -->
+</script>
+
+
+
 
 <style lang="scss">
 @import "~bootstrap/scss/bootstrap";
