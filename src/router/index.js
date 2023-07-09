@@ -10,7 +10,7 @@ import Page2 from '@/components/pages/page2'
 import Page3 from '@/components/pages/page3'
 import Page4 from '@/components/pages/page4'
 import menu from '@/components/pages/menu'
-
+import login from '@/components/pages/login'
 
 Vue.use(VueRouter)
 
@@ -20,6 +20,11 @@ export default new VueRouter({
             name:"首頁",
             path:'/',
             component:Home
+        },
+        {
+            name:"login",
+            path:'/login',
+            component:login
         },
         {
             name:"page",

@@ -28,8 +28,6 @@
   <router-view></router-view>
 </div>
   
-
-
   </div>
 </template>
 
@@ -42,12 +40,18 @@ export default {
  
   },
   created(){
-    const api="http://localhost:3000/api/justin/products"
-this.$http.get(api).then((res)=>{
-  
-  console.log(res)
+    const api2=`${process.env.APIPATH}/api/${process.env.CUSTOMPATH}/products`
+    //console.log(api2)
+    // https://vue-course-api.hexschool.io/api/justin/products
+    // https://vue-course-api.hexschool.io/api/justin/products
 
-})
+    //console.log(process.env.APIPATH)
+    //const api="https://vue-course-api.hexschool.io/api/justin/products"
+ this.$http.get(api2).then((res)=>{
+  
+   console.log(res.data.products)
+
+ })
     
   }
 }
@@ -57,7 +61,7 @@ this.$http.get(api).then((res)=>{
 
 
 <style lang="scss">
-@import "~bootstrap/scss/bootstrap";
+@import "./assets/all";
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
