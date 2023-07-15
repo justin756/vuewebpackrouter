@@ -52,6 +52,7 @@ outPage:{
  
   },
   created(){
+        console.log("照步道",this.$route.params);
     this.$router.push("/login")
     const api2=`${process.env.APIPATH}/api/${process.env.CUSTOMPATH}/products`
 
