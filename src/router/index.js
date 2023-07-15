@@ -17,14 +17,14 @@ Vue.use(VueRouter)
 export default new VueRouter({
     routes:[
         {
-            name:"首頁",
-            path:'/',
-            component:Home
-        },
-        {
             name:"login",
             path:'/login',
             component:login
+        },
+        {
+            name:"Home",
+            path:'/',
+            component:Home
         },
         {
             name:"page",

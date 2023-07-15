@@ -85,7 +85,7 @@
             class="form-control"
             id="floatingInput"
             placeholder="name@example.com"
-            v-model="email"
+            v-model="user.username"
           />
           <label for="floatingInput">Email address</label>
         </div>
@@ -95,7 +95,7 @@
             class="form-control"
             id="floatingPassword"
             placeholder="Password"
-            v-model="password"
+            v-model="user.password"
           />
           <label for="floatingPassword">Password</label>
         </div>
@@ -125,20 +125,25 @@ export default {
   name: "HelloWorld",
   data() {
     return {
-    email:"",
-    password:"",
-      msg: "Welcome to Your Vue.js App"
+     msg: "Welcome to Your Vue.js App",
+     user:{
+        username:"",
+        password:""
+     }
     };
   
   }, 
    methods:{
     siginIn(){
-      let emailValue=this.email
-      let passwordValue=this.password
-      console.log(emailValue,passwordValue)
+    
 
-      this.$http.get(`${process.env.APIPATH}/signin`).then((res)=>{
-        console.log(res)
+      this.$http.post(`${process.env.APIPATH}/signin`,this.user).then((res)=>{
+        console.log(res.data.success)
+if(res.data.success==true){
+  console.log("T/6E/JH ")
+  this.$router.push("/")
+}
+
       })
     }
    }

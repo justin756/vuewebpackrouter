@@ -17,7 +17,9 @@
 
 
       </div>
+     
     </div>
+    <a   @click.prevent="out">登出</a>
   </div>
 </nav>
 
@@ -36,23 +38,42 @@
 // import aa from './components/pages/page'
 export default {
   name: 'App',
+  data(){
+    return{
+
+outPage:{
+   success: true,
+    message: "已登出"
+}
+
+    }
+  },
   components: {
  
   },
   created(){
+    this.$router.push("/login")
     const api2=`${process.env.APIPATH}/api/${process.env.CUSTOMPATH}/products`
-    //console.log(api2)
-    // https://vue-course-api.hexschool.io/api/justin/products
-    // https://vue-course-api.hexschool.io/api/justin/products
 
-    //console.log(process.env.APIPATH)
-    //const api="https://vue-course-api.hexschool.io/api/justin/products"
  this.$http.get(api2).then((res)=>{
   
    console.log(res.data.products)
 
  })
     
+  },
+  methods:{
+    out(){
+      const outApi=`${process.env.APIPATH}/logout`
+     let vm=this
+      this.$http.post(outApi,vm.outPage).then((res)=>{
+        console.log(res)
+        if(res.data.message=="已登出"){
+          this.$router.push("/login")
+        }
+      })
+
+    }
   }
 }
 </script>
